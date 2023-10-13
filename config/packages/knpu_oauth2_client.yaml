@@ -1,0 +1,14 @@
+knpu_oauth2_client:
+    clients:
+        # configure your clients as described here: https://github.com/knpuniversity/oauth2-client-bundle#configuration
+        # keycloak:
+        #     type: generic
+        #     provider_class: App\Security\Provider\KeycloakProvider
+        #     client_id: 'mes-services'
+        #     # client_secret: 'this-is-a-secret'
+        #     client_secret: 'b6025f099bd5c61303e938e9fbe3ad0f'
+        #     redirect_route: connect_check
+        #     redirect_params: {}
+        #     provider_options: {
+        #         oidcDiscoveryUrl: 'http://host.docker.internal:2705/.well-known/openid-configuration',
+        #     }

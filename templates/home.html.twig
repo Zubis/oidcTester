@@ -1,0 +1,42 @@
+{% include 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Test connexion client OIDC</h1>
+
+    <h2>Configuration du serveur OIDC</h2>
+
+    {{ form(form) }}
+
+
+    {% if token %}
+        <h2>Visualisation du token</h2>
+
+        Expire in :
+        <code>
+            {{ token.expires }}
+        </code>
+        accessToken :
+        <code>
+            {{ token.token }}
+        </code>
+        refreshToken :
+        <code>
+            {{ token.refreshToken }}
+        </code>
+    {% endif %}
+
+    {% if decoded_token %}
+        <h2>Access token décodé</h2>
+
+        headers :
+        <code>
+            {{ decoded_token.headers.all|json_encode() }}
+        </code>
+
+        payload :
+        <code>
+            {{ decoded_token.claims.all|json_encode }}
+        </code>
+    {% endif %}
+{% endblock %}
