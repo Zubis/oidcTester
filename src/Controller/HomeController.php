@@ -33,12 +33,11 @@ class HomeController extends AbstractController
         }
 
         $token = $session->get('last_token', null);
-        $decodedToken = $jwtManager->parse($token);
 
         return $this->render('home.html.twig', [
             'form' => $form,
             'token' => $token,
-            'decoded_token' => $decodedToken
+            'decoded_token' => $token ? $jwtManager->parse($token) : null
         ]);
     }
 
